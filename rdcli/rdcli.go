@@ -17,7 +17,6 @@ type RedisCli struct {
 }
 
 var (
-	ErrNil   = errors.New("no matching record found in redis database")
 	ctx      = context.Background()
 	rediscli *RedisCli
 	one      sync.Once
