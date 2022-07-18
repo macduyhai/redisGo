@@ -5,6 +5,7 @@ import (
 
 	"github.com/jinzhu/gorm"
 
+	"github.com/macduyhai/redisGo/logger"
 	"github.com/macduyhai/redisGo/rdcli"
 	"github.com/macduyhai/redisGo/router"
 )
@@ -23,7 +24,7 @@ type Deverloper struct {
 //-------------------------------
 
 func main() {
-	log.Println("Server is starting ...")
+	logger.LogInfor("Server is starting ...")
 	// ExampleClient()
 
 	redisClient, err := rdcli.NewRedisClient(redisHost)

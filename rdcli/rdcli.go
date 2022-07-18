@@ -6,6 +6,7 @@ import (
 	"log"
 	"reflect"
 	"sync"
+	"time"
 
 	"github.com/go-redis/redis/v8"
 	"github.com/goccy/go-json"
@@ -64,7 +65,7 @@ func (rediscli *RedisCli) SaveRedisDB(data interface{}) error {
 			return errors.New("disconected to server redis")
 		}
 		// fmt.Printf("Type: %T, err: %v\n", err, err)
-		rediscli.Client.Set(ctx, user.UserName, jsonuser, 0)
+		rediscli.Client.Set(ctx, user.UserName, jsonuser, 24*time.Hour) // time : thoi gian ton tai
 	default:
 		log.Println("Used default")
 	}
