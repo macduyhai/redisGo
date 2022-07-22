@@ -5,14 +5,17 @@ services:
     image: 'redis:6'
     container_name: redis_master
     restart: always
-    command: redis-server --port 6379
+    command: redis-server /usr/local/etc/redis/redis.conf
+    # command: redis-server --port 6379
     ports:
       - '6379:6379'
     environment:
       - REDIS_REPLICATION_MODE=master
       - REDIS_PASSWORD=1234
     volumes:
+      - ./rdcli/log:/var/log/redis/redis-server.log
       - /redis_data/redis_main:/data
+      - ./rdcli/redis.conf:/usr/local/etc/redis/redis.conf
     networks:
       - redis-network
   # redis-replica:
