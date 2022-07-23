@@ -1,6 +1,26 @@
 version: '2.2'
-
 services:
+  backend:
+    build:
+      context: "./"
+      dockerfile: "./Dockerfile"
+      cache_from:
+        - ubuntu:16.04
+        - golang:1.13.1 
+    depends_on:
+      - redis-master
+    image: qc-monitor:v1.0.0
+    volumes:
+      - ./storage:/app/storage
+    ports:
+      - "8686:8686"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/ping"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+    networks:
+     - redis-network
   redis-master:
     image: 'redis:6'
     container_name: redis_master

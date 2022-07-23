@@ -15,6 +15,7 @@ import (
 
 type RedisCli struct {
 	Client *redis.Client
+	// Client *redis.ClusterClient
 }
 
 var (
@@ -27,11 +28,20 @@ var (
 func NewRedisClient(add string) (*RedisCli, error) {
 	one.Do(func() {
 		rediscli = &RedisCli{}
-		rediscli.Client = redis.NewClient(&redis.Options{
-			Addr:     add,
-			Password: "",
-			DB:       0,
+		rediscli.Client = redis.NewFailoverClient(&redis.FailoverOptions{
+			// rediscli.Client = redis.NewClusterClient(&redis.ClusterOptions{
+			MasterName:    "mymaster",
+			SentinelAddrs: []string{"192.168.0.157:26379", "192.168.3.157:26379", "192.168.2.9:26379"},
+			Password:      "admin",
+			DB:            0,
 		})
+
+		// Client init basic
+		// rediscli.Client = redis.NewClient(&redis.Options{
+		// 	Addr:     add,
+		// 	Password: "admin",
+		// 	DB:       0,
+		// })
 	})
 	if err := rediscli.Client.Ping(ctx).Err(); err != nil {
 		return nil, err
