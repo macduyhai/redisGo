@@ -31,7 +31,7 @@ func NewRedisClient(add string) (*RedisCli, error) {
 		rediscli.Client = redis.NewFailoverClient(&redis.FailoverOptions{
 			// rediscli.Client = redis.NewClusterClient(&redis.ClusterOptions{
 			MasterName:    "mymaster",
-			SentinelAddrs: []string{"192.168.0.157:26379", "192.168.3.157:26379", "192.168.2.9:26379"},
+			SentinelAddrs: []string{"192.168.2.9:26379", "192.168.2.9:26380", "192.168.2.9:26381"},
 			Password:      "admin",
 			DB:            0,
 		})

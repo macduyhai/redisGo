@@ -1,34 +1,39 @@
 version: '2.2'
 services:
   backend:
+    container_name: serverAPP
     build:
       context: "./"
       dockerfile: "./Dockerfile"
       cache_from:
         - ubuntu:16.04
         - golang:1.13.1 
+    restart: always
     depends_on:
       - redis-master
-    image: qc-monitor:v1.0.0
+    # depends_on:
+    #   redis-master:
+    #     condition: service_started
+    image: redisapp:v1.0.0
     volumes:
       - ./storage:/app/storage
     ports:
       - "8686:8686"
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost/ping"]
-      interval: 1m30s
-      timeout: 10s
-      retries: 3
     networks:
      - redis-network
   redis-master:
-    image: 'redis:6'
+    image: 'redis:6-alpine'
     container_name: redis_master
     restart: always
     command: redis-server /usr/local/etc/redis/redis.conf
     # command: redis-server --port 6379
     ports:
       - '6379:6379'
+    healthcheck:
+      test: [ "CMD", "redis-cli", "--raw", "incr", "ping" ]
+      interval: 1m30s
+      timeout: 30s
+      retries: 5
     environment:
       - REDIS_REPLICATION_MODE=master
       - REDIS_PASSWORD=1234
