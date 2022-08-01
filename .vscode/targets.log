@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jul 27 14:33:43 2022
+# Make data base, printed on Mon Aug  1 14:36:24 2022
 
 # Variables
 
@@ -47,7 +49,7 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /usr/share/code/code
 # environment
-JOURNAL_STREAM = 8:57211
+JOURNAL_STREAM = 8:59865
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile
@@ -69,7 +71,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 2645
+MANAGERPID = 2174
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -83,7 +85,7 @@ PATH = /usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/ubuntu:@/tmp/.ICE-unix/2855,unix/ubuntu:/tmp/.ICE-unix/2855
+SESSION_MANAGER = local/ubuntu:@/tmp/.ICE-unix/2385,unix/ubuntu:/tmp/.ICE-unix/2385
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -95,7 +97,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 9bb5101c7a514d1e8db4b9b8ffe8ab3f
+INVOCATION_ID = 546dad6f316a4f6cadb0a57aa5601401
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink guile load
 # environment
@@ -105,7 +107,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3652
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2828
 # automatic
 %F = $(notdir $%)
 # environment
@@ -116,8 +118,9 @@ VSCODE_PIPE_LOGGING = true
 PWD = /home/ubuntu/go/src/redisGo
 # default
 .LOADED := 
+ 
 # environment
-SSH_AGENT_PID = 2820
+SSH_AGENT_PID = 2350
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -153,9 +156,10 @@ SHLVL = 0
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-94ce6f57-39ae-43fc-ac7c-32802097f11b.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-c6140ef1-5872-4934-a891-6f4effee8a3c.sock
 # default
 MAKE_VERSION := 4.2.1
+ 
 # environment
 USER = ubuntu
 # makefile
@@ -187,6 +191,7 @@ GDK_BACKEND = x11
 # automatic
 +F = $(notdir $+)
 # environment
+ 
 QT_ACCESSIBILITY = 1
 # environment
 DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
@@ -206,6 +211,7 @@ SUFFIXES :=
 CHROME_DESKTOP = code-url-handler.desktop
 # environment
 WINDOWPATH = 2
+ 
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
@@ -215,7 +221,7 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LANG = C
 # environment
-VSCODE_PID = 3652
+VSCODE_PID = 2828
 # variable set hash-table stats:
 # Load=103/1024=10%, Rehash=0, Collisions=14/125=11%
 
@@ -225,9 +231,9 @@ VSCODE_PID = 3652
 
 # Directories
 
-# . (device 2053, inode 265871): 18 files, no impossibilities.
+# . (device 2053, inode 265871): 19 files, no impossibilities.
 
-# 18 files, no impossibilities in 1 directories.
+# 19 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -277,15 +283,12 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 26 / storage = 227 B / avg = 8 B
-# current buf: size = 8162 B / used = 227 B / count = 26 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 27 / storage = 241 B / avg = 8 B
+# current buf: size = 8162 B / used = 241 B / count = 27 / avg = 8 B
 
-# strcache performance: lookups = 29 / hit rate = 10%
+# strcache performance: lookups = 30 / hit rate = 10%
 # hash-table stats:
- 
-make: *** No rule to make target 'all'.  Stop.
-
-# Load=26/8192=0%, Rehash=0, Collisions=1/29=3%
-# Finished Make data base on Wed Jul 27 14:33:43 2022
+# Load=27/8192=0%, Rehash=0, Collisions=1/30=3%
+# Finished Make data base on Mon Aug  1 14:36:24 2022
 
  

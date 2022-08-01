@@ -19,9 +19,10 @@ type RedisCli struct {
 }
 
 var (
-	ctx      = context.Background()
-	rediscli *RedisCli
-	one      sync.Once
+	ctx          = context.Background()
+	rediscli     *RedisCli
+	one          sync.Once
+	sentinelHost = "192.168.0.195"
 )
 
 // Single ton pattern
@@ -31,7 +32,7 @@ func NewRedisClient(add string) (*RedisCli, error) {
 		rediscli.Client = redis.NewFailoverClient(&redis.FailoverOptions{
 			// rediscli.Client = redis.NewClusterClient(&redis.ClusterOptions{
 			MasterName:    "mymaster",
-			SentinelAddrs: []string{"192.168.2.9:26379", "192.168.2.9:26380", "192.168.2.9:26381"},
+			SentinelAddrs: []string{sentinelHost + ":26379", sentinelHost + ":26380", sentinelHost + ":26381"},
 			Password:      "admin",
 			DB:            0,
 		})
