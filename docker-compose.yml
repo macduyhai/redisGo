@@ -47,7 +47,7 @@ volumes:
   redis_data:
     name: redis-vl
     driver: local
-    external: true
+#     external: true
 networks:
  redis-network:
     driver: bridge
