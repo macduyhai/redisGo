@@ -22,7 +22,7 @@ var (
 	ctx          = context.Background()
 	rediscli     *RedisCli
 	one          sync.Once
-	sentinelHost = "192.168.0.195"
+	sentinelHost = "192.168.2.9"
 )
 
 // Single ton pattern
