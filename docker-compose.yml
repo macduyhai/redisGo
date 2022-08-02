@@ -39,7 +39,7 @@ services:
       - REDIS_PASSWORD=1234
     volumes:
       - ./rdcli/log:/var/log/redis/redis-server.log
-      - /redis_data/redis_main:/data
+      - ./redis_data:/data
       - ./rdcli/redis.conf:/usr/local/etc/redis/redis.conf
     networks:
       - redis-network
