@@ -20,9 +20,9 @@ FROM ubuntu:16.04
 
 ENV LANG en_US.utf8
 
-RUN apt update
+# RUN apt update
 
-RUN apt install -y curl sudo net-tools vim telnet redis-server redis-sentinel iputils-ping
+RUN apt install -y curl sudo net-tools telnet redis-server redis-sentinel iputils-ping
 
 RUN apt-get update && apt-get install -y locales && rm -rf /var/lib/apt/lists/*
 
